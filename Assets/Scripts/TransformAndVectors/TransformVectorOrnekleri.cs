@@ -25,6 +25,8 @@ namespace TransformAndVectors
 
             //TransformChange(); 
 
+            VectorOperation();
+
             
         }
 
@@ -184,6 +186,25 @@ namespace TransformAndVectors
         {
 
            transform.position = Vector3.Lerp(transform.position, cube2.position, lerpSpeed * Time.deltaTime);
+
+        }
+
+        private void VectorOperation()
+
+        {
+
+            Vector3 firstVector = new Vector3(2, 5, 10);
+            Vector3 secondVector = Vector3.one;
+
+            Vector3 toplam = firstVector + secondVector;
+            Vector3 fark = firstVector - secondVector;
+
+            Debug.Log( " Vector Toplamý :" + toplam);  // vektörler kendi aralarýda toplanabliyor.
+            Debug.Log( " Vector Farký :" + fark);      // vektörler kendi aralarýda çýkartýlabliyor.
+
+            Debug.Log(firstVector * 2);   // vektörler herhangi bir sayý ile çarpýlabiliyor, kendi aralarýnda çarpamýyoruz.
+            Debug.Log(secondVector / 2);   // vektörler herhangi bir sayý ile bölünebiliyor, kendi aralarýnda bölünemiyor.
+            Debug.Log(secondVector * 0.5f);   
 
         }
 
